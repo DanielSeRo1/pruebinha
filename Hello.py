@@ -1,3 +1,7 @@
 import streamlit as st
 
-st.write("Hola UAM")
+enable = st.checkbox("Activar cámara")
+picture = st.camera_input("Tomar foto", disabled = not enable)
+
+if picture:
+	st.image(picture)
