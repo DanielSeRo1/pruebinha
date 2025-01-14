@@ -1,13 +1,12 @@
+
+
 import streamlit as st
-import time
 
-st.set_page_config()
+enable = st.checkbox("Enable camera")
+picture = st.camera_input("Take a picture", disabled=not enable)
 
-enable = st.checkbox("Activar cámara")
-ph = st.empty()
-N = 15
-ph.metric("Cuenta regresiva", f"{mm:02d}:{ss:02d}")
-picture = st.camera_input("Tomar foto", disabled = not enable)
+if picture:
+    st.image(picture)
 
   
 
