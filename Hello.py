@@ -7,7 +7,7 @@ enable = st.checkbox("Activar cámara")
 picture = st.camera_input("Tomar foto", disabled = not enable)
 
 ph = st.empty()
-N = 5*60
+N = 1*60
 if picture:
 	for secs in range(N,0,-1):
 		mm, ss = secs//60, secs%60
